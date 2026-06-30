@@ -1,0 +1,23 @@
+[
+  {
+    "task_id": "WEB-001",
+    "step": 1,
+    "action": "open_search",
+    "observation": "Search page loaded",
+    "evidence": "screenshot_001"
+  },
+  {
+    "task_id": "WEB-001",
+    "step": 2,
+    "action": "open_official_result",
+    "observation": "Official docs visible",
+    "evidence": "url_official_docs"
+  },
+  {
+    "task_id": "WEB-001",
+    "step": 3,
+    "action": "find_parameter",
+    "observation": "Parameter table located",
+    "evidence": "screenshot_002"
+  }
+]

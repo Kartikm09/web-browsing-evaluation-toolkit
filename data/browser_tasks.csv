@@ -1,0 +1,5 @@
+task_id,site_type,goal,success,steps_expected,steps_taken,evidence_count,score,issue_type,reviewer_note
+WEB-001,docs,Find official API parameter,yes,4,5,2,4,minor_extra_step,Correct source found with one extra navigation.
+WEB-002,commerce,Compare synthetic product attributes,partial,6,8,1,3,thin_evidence,Answer plausible but evidence capture was incomplete.
+WEB-003,news,Verify publication date,no,3,4,0,2,missing_source,No source evidence recorded.
+WEB-004,support,Locate refund policy summary,yes,5,5,3,5,none,Strong source capture and concise summary.
