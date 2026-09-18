@@ -14,6 +14,9 @@ issues = Counter(row["issue_type"] for row in rows)
 print("Browser task summary")
 print("--------------------")
 print(f"Tasks: {len(rows)}")
-print(f"Average score: {sum(scores) / len(scores):.2f}")
+if scores:
+    print(f"Average score: {sum(scores) / len(scores):.2f}")
+else:
+    print("Average score: N/A (no tasks)")
 for issue, count in issues.most_common():
     print(f"- {issue}: {count}")

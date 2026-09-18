@@ -81,3 +81,23 @@ Built a web browsing evaluation toolkit for reviewing browser-agent task traject
 - No private client names.
 - No harmful jailbreak instructions.
 - No deletion or modification of existing repositories.
+
+## Verification
+
+Run `make verify` (or `python3 -m unittest discover -s tests -v`). The
+standard-library suite uses independent synthetic fixtures and command-line
+checks, including malformed inputs. GitHub CI runs the same command on Python
+3.11. These checks verify the reporting and trajectory-validation code.
+
+`python3 scripts/validate_trajectories.py [path/to/events.json]` checks per-task
+step ordering and requires evidence to be a nonempty text string after trimming
+whitespace. Input must be a list of event objects with positive integer steps
+(integer strings are accepted; booleans and floats are rejected). Malformed
+input exits 2. Default report mode keeps exit status 0 when findings are present;
+add `--strict` to exit 1 for missing evidence or ordering issues. An empty task
+summary prints `Average score: N/A (no tasks)`.
+
+These checks cover synthetic trajectory metadata. They do not execute browser
+actions, visit evidence links, or establish source quality or task completion.
+
+See [repair scope and evidence](docs/verified-repair.md).
